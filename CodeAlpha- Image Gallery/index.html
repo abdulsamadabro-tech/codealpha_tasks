@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="container">
+    <h1>Image Gallery</h1>
+    <p class="subtitle">Responsive gallery with filters and lightbox view</p>
+
+    <div class="filters">
+      <button class="active" onclick="filterImages('all', this)">All</button>
+      <button onclick="filterImages('nature', this)">Nature</button>
+      <button onclick="filterImages('city', this)">City</button>
+      <button onclick="filterImages('tech', this)">Tech</button>
+    </div>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" data-category="nature" onclick="openLightbox(this)" />
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900" data-category="nature" onclick="openLightbox(this)" />
+      <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=900" data-category="city" onclick="openLightbox(this)" />
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900" data-category="city" onclick="openLightbox(this)" />
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" data-category="tech" onclick="openLightbox(this)" />
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900" data-category="tech" onclick="openLightbox(this)" />
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span onclick="closeLightbox()" class="close">×</span>
+    <button class="prev" onclick="changeImage(-1)">❮</button>
+    <img id="lightboxImg" />
+    <button class="next" onclick="changeImage(1)">❯</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
